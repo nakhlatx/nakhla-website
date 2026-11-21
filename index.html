@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nakhla Youth Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, hopeful, youth-led; confident but welcoming
+   IDEA: a date-palm grove at golden hour: roots, trunk, fronds reaching up
+   PICTURE: a layered palm scene with sun, dunes and date clusters in the hero
+   COLOUR and TYPE: deep palm green ground, date gold support, sand white; Reem Kufi + Figtree
+   LAYOUT: full-bleed green hero, sand sections, listing cards like a careers board, rich footer */
+:root{color-scheme:light dark;
+--bg:light-dark(#fbf8f0,#0d1f19);
+--card:light-dark(#ffffff,#132c24);
+--ink:light-dark(#14261f,#eef1e9);
+--soft:light-dark(#52625a,#a9b8ae);
+--line:light-dark(#e4dccb,#24443a);
+--green:#0f4d3a;--green2:#0a3a2c;--gold:#e0a93b;--gold-ink:light-dark(#8a5a07,#f0c25e);
+--tint:light-dark(#f1ead8,#102820)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:"Reem Kufi",Figtree,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4vw,44px);color:var(--ink)}
+h3{font-size:22px}
+p{margin:0 0 1em;max-width:65ch}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(40px,6vw,88px) max(5vw,16px)}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:var(--green2);color:#fff}
+.nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:10px max(5vw,16px)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 22px "Reem Kufi",sans-serif}
+.logo svg{width:34px;height:34px}
+.logo small{font:500 15px "Reem Kufi";color:var(--gold);margin-inline-start:2px}
+.links{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap}
+.links a{text-decoration:none;padding:10px 12px;border-radius:8px;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+.links a:hover,.links a:focus-visible{background:rgba(255,255,255,.1)}
+.links a.give{background:var(--gold);color:#1b1405;font-weight:700}
+.links a.give:hover{background:#f0bb4c}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--green) 0%,var(--green2) 100%);color:#fff;padding-bottom:0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;align-items:end}
+.hero .copy{padding-bottom:clamp(40px,6vw,88px)}
+.ar{font:600 22px "Reem Kufi";color:var(--gold);margin-bottom:10px;display:block}
+.hero h1{font-size:clamp(52px,9vw,104px);line-height:.95;margin-bottom:18px}
+.tag{font-size:clamp(18px,2vw,21px);color:#d8e7df;max-width:34ch;margin-bottom:28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font:700 16px Figtree;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.gold{background:var(--gold);color:#1b1405}
+.btn.gold:hover{background:#f0bb4c}
+.btn.ghost{border-color:rgba(255,255,255,.55);color:#fff;background:none}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn:focus-visible,.links a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.scene{position:relative;aspect-ratio:1/1;max-height:560px;width:100%}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.sway{transform-origin:300px 205px;animation:sway 6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+@media(prefers-reduced-motion:reduce){.sway{animation:none}html{scroll-behavior:auto}}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
+.mission{font:600 clamp(22px,2.6vw,30px)/1.3 "Reem Kufi";color:var(--ink);margin:18px 0 0;max-width:24ch}
+.story{background:var(--tint);border-radius:20px;padding:clamp(22px,3vw,36px)}
+.story h3{margin-bottom:12px;color:var(--gold-ink)}
+.story p:last-child{margin-bottom:0}
+.kicker{color:var(--gold-ink);font-weight:700;font-size:15px;margin-bottom:8px;display:block}
+
+/* programs */
+.programs{background:var(--tint)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px;margin-top:32px}
+.prog{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.prog svg{width:44px;height:44px;margin-bottom:14px}
+.prog h3{font-size:20px;margin-bottom:8px}
+.prog p{color:var(--soft);margin:0;font-size:15.5px}
+.note{font-size:14px;color:var(--soft);margin-top:18px}
+
+/* opportunities */
+.ops h1{font-size:clamp(34px,5vw,52px);margin-bottom:10px}
+.ops .lead{color:var(--soft);font-size:17px}
+.ops h2{font-size:26px;margin:36px 0 16px}
+.list{display:grid;gap:16px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,30px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 28px;align-items:start}
+.job h3{font-size:23px;margin-bottom:8px}
+.job p{color:var(--soft);margin-bottom:12px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;color:var(--soft)}
+.meta b{color:var(--ink);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#137a4f;white-space:nowrap}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:#1fa36a}
+.job .btn{align-self:center;background:var(--green);color:#fff;white-space:nowrap}
+.job .btn:hover{background:#13654c}
+.apply{grid-column:1/-1;display:none;margin-top:10px;padding:16px 18px;border-radius:12px;background:var(--tint);font-size:15.5px}
+.apply.open{display:block}
+.apply code{font:600 15px Figtree;color:var(--gold-ink);overflow-wrap:anywhere}
+.copy-btn{margin-inline-start:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 14px Figtree;cursor:pointer}
+
+/* give */
+.give-band{background:var(--green);color:#fff}
+.give-band .wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.give-band h2{color:#fff;margin-bottom:10px}
+.give-band p{color:#d8e7df;margin:0}
+
+/* footer */
+footer{background:var(--green2);color:#cfe0d6;font-size:15px}
+.foot{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(4,minmax(0,1fr));gap:28px}
+.foot h4{color:#fff;font:600 16px "Reem Kufi";margin:0 0 10px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.foot a{text-decoration:none}.foot a:hover{color:var(--gold)}
+.foot .logo{color:#fff;margin-bottom:10px}
+.base{border-top:1px solid rgba(255,255,255,.14);margin-top:36px;padding-top:18px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:14px}
+
+@media(max-width:860px){.foot{grid-template-columns:repeat(2,minmax(0,1fr))}.foot .brand{grid-column:1/-1}}
+@media(max-width:760px){
+ .hero .wrap,.about .wrap{grid-template-columns:minmax(0,1fr)}
+ .hero .copy{padding-bottom:0}.scene{max-height:380px;margin-inline:auto;max-width:420px}
+ .job{grid-template-columns:minmax(0,1fr)}.job .btn{justify-self:start}
+ .links{margin-inline-start:0;width:100%}.links a{padding:8px 10px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <nav class="nav" aria-label="Main">
+  <a class="logo" href="#top" aria-label="Nakhla home">
+   <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#e0a93b"/><path d="M19 36c1-7 1-13 1-19h1.6c0 6 .2 12 1.4 19z" fill="#0a3a2c"/><g fill="#0f4d3a"><path d="M20.5 17C15 12 9 13 6 17c5-2 9-2 14.5 0z"/><path d="M20.5 17c5.5-5 11.5-4 14.5 0-5-2-9-2-14.5 0z"/><path d="M20.5 17C18 10 13 7 8 8c5 2 8 4 12.5 9z"/><path d="M20.5 17C23 10 28 7 33 8c-5 2-8 4-12.5 9z"/></g></svg>
+   Nakhla <small>نخلة</small>
+  </a>
+  <div class="links">
+   <a href="#about">About</a>
+   <a href="#programs">Programs</a>
+   <a href="#get-involved">Get Involved</a>
+   <a class="give" href="#give">Give</a>
+  </div>
+ </nav>
+</header>
+
+<main id="top">
+<section class="band hero">
+ <div class="wrap">
+  <div class="copy">
+   <span class="ar" lang="ar">نخلة</span>
+   <h1>Nakhla</h1>
+   <p class="tag">The Arab &amp; Muslim Youth Network of Texas. Deep roots, high reach.</p>
+   <div class="btns">
+    <a class="btn gold" href="#get-involved">Explore opportunities</a>
+    <a class="btn ghost" href="#about">Our story</a>
+   </div>
+  </div>
+  <div class="scene" aria-hidden="true">
+   <svg viewBox="0 0 600 600">
+    <defs>
+     <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd88a"/><stop offset=".6" stop-color="#e0a93b"/><stop offset="1" stop-color="#e0a93b" stop-opacity="0"/></radialGradient>
+     <linearGradient id="trunk" x1="0" x2="1"><stop offset="0" stop-color="#6b4a22"/><stop offset=".55" stop-color="#9b7038"/><stop offset="1" stop-color="#5a3d1b"/></linearGradient>
+     <linearGradient id="frond" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f8a5f"/><stop offset="1" stop-color="#16603f"/></linearGradient>
+     <linearGradient id="dune1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a441"/><stop offset="1" stop-color="#b78428"/></linearGradient>
+     <linearGradient id="dune2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c99436"/><stop offset="1" stop-color="#8f6520"/></linearGradient>
+     <path id="leaf" d="M0 0 C60 -38 150 -40 230 -8 C160 -20 80 -14 0 6 Z" fill="url(#frond)"/>
+    </defs>
+    <circle cx="410" cy="230" r="190" fill="url(#sun)" opacity=".9"/>
+    <circle cx="410" cy="230" r="92" fill="#f3c463"/>
+    <!-- far palm -->
+    <g opacity=".45" transform="translate(470 330) scale(.45)">
+     <path d="M-8 520 C0 360 4 200 14 40 L30 40 C24 200 26 360 40 520 Z" fill="#0a3a2c"/>
+     <g transform="translate(22 40)" fill="#0a3a2c"><use href="#leaf" transform="rotate(-20)"/><use href="#leaf" transform="rotate(15)"/><use href="#leaf" transform="scale(-1 1) rotate(-20)"/><use href="#leaf" transform="scale(-1 1) rotate(15)"/><use href="#leaf" transform="rotate(-60)"/><use href="#leaf" transform="scale(-1 1) rotate(-60)"/></g>
+    </g>
+    <path d="M0 470 C120 420 260 440 360 470 C460 500 540 470 600 450 L600 600 L0 600 Z" fill="url(#dune2)"/>
+    <!-- main palm trunk -->
+    <path d="M276 560 C282 440 292 320 292 205 L312 205 C314 320 320 440 336 560 Z" fill="url(#trunk)"/>
+    <g id="rings" stroke="#4a3216" stroke-width="3" opacity=".55" fill="none"></g>
+    <!-- crown -->
+    <g class="sway">
+     <g transform="translate(302 205)">
+      <use href="#leaf" transform="rotate(-8) scale(1.1)"/>
+      <use href="#leaf" transform="rotate(25)"/>
+      <use href="#leaf" transform="rotate(-42) scale(.95)"/>
+      <use href="#leaf" transform="rotate(-78) scale(.75)"/>
+      <use href="#leaf" transform="scale(-1 1) rotate(-8) scale(1.1)"/>
+      <use href="#leaf" transform="scale(-1 1) rotate(25)"/>
+      <use href="#leaf" transform="scale(-1 1) rotate(-42) scale(.95)"/>
+      <use href="#leaf" transform="scale(-1 1) rotate(-78) scale(.75)"/>
+      <g fill="#7a3f12"><circle cx="-14" cy="22" r="8"/><circle cx="-4" cy="32" r="8"/><circle cx="-22" cy="34" r="7"/><circle cx="-12" cy="44" r="7"/><circle cx="16" cy="22" r="8"/><circle cx="26" cy="32" r="7"/><circle cx="12" cy="36" r="8"/><circle cx="20" cy="46" r="7"/></g>
+      <g fill="#a85a1e"><circle cx="-16" cy="20" r="3"/><circle cx="14" cy="20" r="3"/><circle cx="10" cy="34" r="3"/></g>
+      <circle r="12" fill="#5a3d1b"/>
+     </g>
+    </g>
+    <path d="M0 540 C140 500 300 520 420 548 C500 566 560 556 600 540 L600 600 L0 600 Z" fill="url(#dune1)"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="band about" id="about">
+ <div class="wrap">
+  <div>
+   <span class="kicker">Who we are</span>
+   <h2>A youth-led network for Arab and Muslim students in Texas</h2>
+   <p class="mission">Nakhla helps Arab and Muslim students in Texas build connections, skills and futures.</p>
+  </div>
+  <div class="story">
+   <h3>Why “Nakhla”?</h3>
+   <p><span lang="ar">نخلة</span> (nakhla) means palm tree in Arabic. The date palm grows across Iraq and the Arab world. It grows slowly, sends its roots deep and feeds people for generations.</p>
+   <p>That's what we want for every student we work with. Like the palm tree we're named for, Nakhla helps Arab and Muslim youth in Texas grow deep roots in their identity and reach high in their careers.</p>
+   <p>Nakhla was started by a Texas teen who moved here from Iraq and finished high school early. It's run by young people, for young people.</p>
+  </div>
+ </div>
+</section>
+
+<section class="band programs" id="programs">
+ <div class="wrap">
+  <span class="kicker">What we do</span>
+  <h2>Programs</h2>
+  <div class="grid" id="progGrid"></div>
+  <p class="note">These are the programs we're planning. Dates will be announced on our social media.</p>
+ </div>
+</section>
+
+<section class="band ops" id="get-involved">
+ <div class="wrap">
+  <span class="kicker">Get involved</span>
+  <h1>Explore opportunities with Nakhla</h1>
+  <p class="lead">We're building our founding team. Volunteer with us, gain leadership experience and help shape a new community from day one.</p>
+  <h2>Active opportunities</h2>
+  <div class="list" id="jobList"></div>
+  <p class="note">Sample listings. Edit the roles and dates in the page's script.</p>
+ </div>
+</section>
+
+<section class="band give-band" id="give">
+ <div class="wrap">
+  <div>
+   <h2>Support Nakhla</h2>
+   <p>We're not accepting donations yet. Want to help another way, or be notified when we are? Get in touch.</p>
+  </div>
+  <a class="btn gold" href="#get-involved">Volunteer instead</a>
+ </div>
+</section>
+</main>
+
+<footer class="band">
+ <div class="wrap">
+  <div class="foot">
+   <div class="brand">
+    <a class="logo" href="#top">Nakhla <small>نخلة</small></a>
+    <p>Arab &amp; Muslim Youth Network of Texas.</p>
+    <p>Contact: <span class="email-text"></span></p>
+   </div>
+   <div><h4>About</h4><ul><li><a href="#about">Our story</a></li><li><a href="#about">Mission</a></li></ul></div>
+   <div><h4>Programs</h4><ul><li><a href="#programs">Mentor Match</a></li><li><a href="#programs">Career Q&amp;A Nights</a></li><li><a href="#programs">Skills Workshops</a></li></ul></div>
+   <div><h4>Get Involved</h4><ul><li><a href="#get-involved">Volunteer</a></li><li><a href="#get-involved">Become a mentor</a></li><li><a href="#give">Give</a></li></ul></div>
+   <div><h4>Social</h4><ul><li>Instagram</li><li>TikTok</li><li>LinkedIn</li></ul></div>
+  </div>
+  <div class="base"><span>© 2026 Nakhla · Texas</span><span>Deep roots, high reach.</span></div>
+ </div>
+</footer>
+
+<script>
+{
+ // ✏️ Change this to Nakhla's real Gmail address
+ const EMAIL = "your-nakhla-email@gmail.com";
+
+ const icon = (d) => `<svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#e0a93b" opacity=".22"/><g fill="none" stroke="#0f4d3a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${d}</g></svg>`;
+ const programs = [
+  {t:"Mentor Match", d:"We pair high school and college students with Arab and Muslim professionals in the field they want to go into.", i:'<circle cx="16" cy="17" r="4"/><circle cx="28" cy="17" r="4"/><path d="M9 31c1-5 4-7 7-7s6 2 7 7M21 31c1-5 4-7 7-7s6 2 7 7"/>'},
+  {t:"Career Q&A Nights", d:"Monthly online talks where engineers, doctors, founders and others share their path and answer your questions.", i:'<path d="M11 13h22v14H20l-6 5v-5h-3z"/><path d="M18 19h8M18 23h5"/>'},
+  {t:"Skills Workshops", d:"Hands-on sessions on resumes, interviews, scholarships, coding and public speaking.", i:'<path d="M14 30l12-12M26 18l3-3 3 3-3 3zM12 32l2-2"/><path d="M13 14h8M17 10v8"/>'},
+  {t:"Community Service", d:"Members give back together through food drives, tutoring and helping newcomer families settle in Texas.", i:'<path d="M22 31s-9-5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 11-9 11z"/>'}
+ ];
+ document.getElementById("progGrid").innerHTML = programs.map(p =>
+  `<article class="prog">${icon(p.i)}<h3>${p.t}</h3><p>${p.d}</p></article>`).join("");
+
+ const jobs = [
+  {t:"Founding Board Member", d:"Help lead Nakhla from the start: plan programs, make decisions and help us become an official nonprofit. Great for motivated students or adults who believe in the mission.", posted:"Nov 21, 2026", due:"Jan 31, 2027"},
+  {t:"Social Media Lead", d:"Run our Instagram and TikTok. Design posts, share event updates and grow our community. Experience with Canva is a plus.", posted:"Nov 21, 2026", due:"Jan 15, 2027"},
+  {t:"Professional Mentor", d:"Are you an Arab or Muslim professional in Texas? Volunteer an hour a month to guide a student interested in your field.", posted:"Nov 21, 2026", due:"Open until filled"}
+ ];
+ document.getElementById("jobList").innerHTML = jobs.map((j, n) => `
+  <article class="job">
+   <div>
+    <h3>${j.t}</h3>
+    <p>${j.d}</p>
+    <div class="meta"><span class="pill">Open</span><span><b>Posted:</b> ${j.posted}</span><span><b>Deadline:</b> ${j.due}</span></div>
+   </div>
+   <button class="btn" type="button" data-n="${n}" aria-expanded="false" aria-controls="apply${n}">Apply now</button>
+   <div class="apply" id="apply${n}">To apply, email <code class="email-text"></code> with the subject “${j.t}”. Tell us a little about yourself and why you'd like to join.
+    <button class="copy-btn" type="button">Copy email</button></div>
+  </article>`).join("");
+
+ for (const el of document.querySelectorAll(".email-text")) el.textContent = EMAIL;
+
+ document.getElementById("jobList").addEventListener("click", async (e) => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  if (b.classList.contains("copy-btn")) {
+   try { await navigator.clipboard.writeText(EMAIL); b.textContent = "Copied!"; }
+   catch (err) { b.textContent = "Select the email to copy"; }
+   setTimeout(() => { b.textContent = "Copy email"; }, 2000);
+   return;
+  }
+  const box = document.getElementById("apply" + b.dataset.n);
+  const open = box.classList.toggle("open");
+  b.setAttribute("aria-expanded", open);
+ });
+
+ // trunk rings
+ const rings = document.getElementById("rings");
+ let s = "";
+ for (let y = 230; y < 555; y += 22) {
+  const k = (y - 205) / 355;
+  const l = 292 - k * 16, r = 312 + k * 24;
+  s += `<path d="M${l} ${y} Q${(l + r) / 2} ${y + 7} ${r} ${y}"/>`;
+ }
+ rings.innerHTML = s;
+}
+</script>
+</body>
+</html>
